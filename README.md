@@ -1,4 +1,4 @@
-fn.el -- Functional utilities for Emacs Lisp.
+fn-utils.el -- Functional utilities for Emacs Lisp.
 -----
 
 While [`cl`](https://www.gnu.org/software/emacs/manual/html_node/cl/) and
@@ -6,25 +6,29 @@ While [`cl`](https://www.gnu.org/software/emacs/manual/html_node/cl/) and
 functional programming in Emacs Lisp, some things remain unavailable, 
 inconvenient or verbose.
 
-__fn.el__ provides a set of utilities for functional programming in Emacs Lisp.
+__fn-utils.el__ provides a set of utilities for functional programming in Emacs Lisp.
 It focuses on concision and readability and is the sister library to
 [__ls.el__](https://github.com/troyp/ls.el).
+
+__note:__ This library has been renamed from `fn.el` to `fn-utils`. The
+repository [__fn.el__](https://github.com/troyp/fn.el) is now dedicated to the
+macros `fn` and `fn:`.
 
 ------------------------------------------------------------
 
 ## Installation
 
-Place `fn.el` in any directory on your `load-path` and:
+Place `fn-utils.el` in any directory on your `load-path` and:
 
-    (require 'fn)
+    (require 'fn-utils)
 
 ------------------------------------------------------------
 
 ## API
 
 ### Function creation: combinators and lambda forms
-* [fn](#fn-rest-body) `(&rest body)`
-* [fn:](#fn-rest-body) `(&rest body)`
+* ~~[fn](#fn-rest-body) `(&rest body)`~~
+* ~~[fn:](#fn-rest-body) `(&rest body)`~~
 * [fn-bindl](#fn-bindl-function-rest-largs) `(function &rest largs)`
 * [fn-bindr](#fn-bindr-function-rest-rargs) `(function &rest rargs)`
 * [fn-fork](#fn-fork-merge-function-rest-functions) `(merge-function &rest functions)`
@@ -42,7 +46,7 @@ Place `fn.el` in any directory on your `load-path` and:
 
 ## Function Creation
 
-#### fn `(&rest BODY)`
+#### ~~fn `(&rest BODY)`~~    (_see `fn.el`_)
 
 Return a function defined by BODY.
 
@@ -74,7 +78,7 @@ If applied to a literal, creates a constant function, or equivalently, a thunk
              (number-sequence 1 10))
     ;; (3 6 9)
     
-#### fn: `(&rest BODY)`
+#### ~~fn: `(&rest BODY)`~~    (_see `fn.el`_)
 
 Return a function defined by (BODY).
 
