@@ -42,6 +42,20 @@ Place `fn-utils.el` in any directory on your `load-path` and:
 * [fn-alias](#fn-alias-bindings-rest-body) `(bindings &rest body)`
 * [fn-setq](#fn-setq-rest-bindings) `(&rest bindings)`
 
+### Function factories
+* [fn-n*_](#partially-applied-arithmetic-functions) `(n)`
+* [fn-_*n](#partially-applied-arithmetic-functions) `(n)`
+* [fn-n+_](#partially-applied-arithmetic-functions) `(n)`
+* [fn-_+n](#partially-applied-arithmetic-functions) `(n)`
+* [fn-n-_](#partially-applied-arithmetic-functions) `(n)`
+* [fn-_-n](#partially-applied-arithmetic-functions) `(n)`
+* [fn-n/_](#partially-applied-arithmetic-functions) `(n)`
+* [fn-_/n](#partially-applied-arithmetic-functions) `(n)`
+* [fn-_^n](#partially-applied-arithmetic-functions) `(n)`
+* [fn-n^_](#partially-applied-arithmetic-functions) `(n)`
+* [fn-_%n](#partially-applied-arithmetic-functions) `(n)`
+* [fn-n%_](#partially-applied-arithmetic-functions) `(n)`
+
 ------------------------------------------------------------
 
 ## Function Creation
@@ -209,9 +223,33 @@ Set the FUNCTION definition of each SYMBOL in a set of BINDINGS.
 
 ------------------------------------------------------------
 
+## Function Factories
+
+### Partially applied arithmetic functions
+
+Return partially applied arithmetic functions:
+
+| factory fn    | generated fn |  
+|---------------|--------------|  
+| `fn-n*_ (n)`  | `(* N _)`    |  
+| `fn-_*n (n)`  | `(* _ N)`    |  
+| `fn-n+_ (n)`  | `(+ N _)`    |  
+| `fn-_+n (n)`  | `(+ _ N)`    |  
+| `fn-n-_ (n)`  | `(- N _)`    |  
+| `fn-_-n (n)`  | `(- _ N)`    |  
+| `fn-n/_ (n)`  | `(/ N _)`    |  
+| `fn-_/n (n)`  | `(/ _ N)`    |  
+| `fn-_^n (n)`  | `(expt _ N)` |  
+| `fn-n^_ (n)`  | `(expt N _)` |  
+| `fn-_%n (n)`  | `(mod _ N)`  |  
+| `fn-n%_ (n)`  | `(mod N _)`  |  
+
+------------------------------------------------------------
+
 ## TODO
 
 * `fn-using-fn.el` -- Function-binding macro providing short names for __fn.el__ constructs.
 * Infix expression macro -- curly bracket notation?
 * `fn-defpartial`, `fn-defpartial-right` -- Defining named partially applied functions.
 * `fn-alias*`, `fn-setq*`
+ 

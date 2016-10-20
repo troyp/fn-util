@@ -313,6 +313,60 @@ Example:
 
 
 
+;; ,--------------------,
+;; | Function Factories |
+;; '--------------------'
+
+(defun fn-n*_ (n)
+  "Return partially applied arithmetic function (* N _)."
+  (lambda (x) (* n x)))
+
+(defun fn-_*n (n)
+  "Return partially applied arithmetic function (* _ N)."
+  (lambda (x) (* x n)))
+
+(defun fn-n+_ (n)
+  "Return partially applied arithmetic function (+ N _)."
+  (lambda (x) (+ n x)))
+
+(defun fn-_+n (n)
+  "Return partially applied arithmetic function (+ _ N)."
+  (lambda (x) (+ x n)))
+
+(defun fn-n-_ (n)
+  "Return partially applied arithmetic function (- N _)."
+  (lambda (x) (- n x)))
+
+(defun fn-_-n (n)
+  "Return partially applied arithmetic function (- _ N)."
+  (lambda (x) (- x n)))
+
+(defun fn-n/_ (n)
+  "Return partially applied arithmetic function (/ N _)."
+  (lambda (x) (/ n x)))
+
+(defun fn-_/n (n)
+  "Return partially applied arithmetic function (/ _ N)."
+  (lambda (x) (/ x n)))
+
+(defun fn-_^n (n)
+  "Return partially applied arithmetic function (expt _ N)."
+  (lambda (x) (expt x n)))
+
+(defun fn-n^_ (n)
+  "Return partially applied arithmetic function (expt N _)."
+  (lambda (x) (expt n x)))
+
+(defun fn-n%_ (n)
+  "Return partially applied arithmetic function (mod N _)."
+  (lambda (x) (mod n x)))
+
+(defun fn-_%n (n)
+  "Return partially applied arithmetic function (mod _ N)."
+  (lambda (x) (mod x n)))
+
+
+
 ;; ,---------------,
 ;; | Miscellaneous |
 ;; '---------------'
